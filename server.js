@@ -55,7 +55,7 @@ server.use((err, req, res, next) => {
 const PORT = 4007
 
 server.get('/',(req,res)=>{
-    res.status(200).json("Dev Sewnex server started - Sales v1.6")
+    res.status(200).json("SBX Sewnex server started - Sales v1.0")
 })
 
 server.listen(PORT,()=>{
