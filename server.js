@@ -30,7 +30,7 @@ server.use(purchaseRouter);
 const PORT = 4005;
 
 server.get('/',(req,res)=>{
-    res.status(200).json("Dev Sewnex server started - Purchase v1.6")
+    res.status(200).json("SBX Sewnex server started - Purchase v1.0")
 })
 
 server.listen(PORT,()=>{
