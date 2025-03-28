@@ -32,7 +32,7 @@ server.use(sewnexRouter);
 const PORT = 4003
 
 server.get('/',(req,res)=>{
-    res.status(200).json("Dev Sewnex server started - Inventory v2.0")
+    res.status(200).json("SBX Sewnex server started - Inventory v1.0")
 });
 
 server.listen(PORT,()=>{
