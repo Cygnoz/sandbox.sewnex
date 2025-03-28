@@ -34,7 +34,7 @@ server.use(sewnexRouter);
 const PORT = process.env.PORT || 4004;
 
 server.get('/', (req, res) => {
-    res.status(200).json("Dev Sewnex server started - Organization v3");
+    res.status(200).json("SBX Sewnex server started - Organization v1.0");
 });
 
 server.listen(PORT, () => {
