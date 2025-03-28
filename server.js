@@ -28,7 +28,7 @@ server.use(supplierRouter)
 const PORT = 4009
 
 server.get('/',(req,res)=>{
-    res.status(200).json("Dev Sewnex server started - Supplier v1.6")
+    res.status(200).json("SBX Sewnex server started - Supplier v1.0")
 })
 
 server.listen(PORT,()=>{
