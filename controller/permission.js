@@ -1,5 +1,3 @@
-// v1.0
-
 const User = require('../database/model/user');
 const Role = require('../database/model/role');
 const ActivityLog = require('../database/model/activityLog');
@@ -10,14 +8,18 @@ const checkPermission = (permissionAction) => {
   return async (req, res, next) => {
     try {
       // Fetch user using userId from req.user
+      if (!req.user) {
+        return res.status(401).json({ message: 'Unauthorized: Missing user credentials' });
+      }
       const user = await User.findById(req.user.id);
       if (!user) {
         return res.status(401).json({ message: 'User not found' });
       }
 
+      const organizationId= req.user.organizationId
 
       // Fetch the role associated with the user
-      const role = await Role.findOne({ roleName: user.role });
+      const role = await Role.findOne({ roleName: user.role, organizationId });
       if (!role) {
         return res.status(401).json({ message: 'Role not found' });
       }
@@ -31,7 +33,7 @@ const checkPermission = (permissionAction) => {
 
       // Find the permission in the role's permissions array
       const permission = role.permissions.find(p => p.note === permissionAction);
-      // console.log(permissionAction);
+      // console.log( "user  ",role);
       
       
 
@@ -105,3 +107,5 @@ function generateTimeAndDateForDB(
 
 
 module.exports = checkPermission;
+
+
