@@ -32,7 +32,7 @@ server.use(staffRouter,expenseRouter);
 const PORT = 4008;
 
 server.get('/',(req,res)=>{
-    res.status(200).json("Dev Sewnex server started - Staff v1.6")
+    res.status(200).json("SBX Sewnex server started - Staff v1.0")
 })
 
 server.listen(PORT,()=>{
