@@ -8,7 +8,7 @@ const checkPermission = (permissionAction) => {
   return async (req, res, next) => {
     try {
       // Fetch user using userId from req.user
-      if (!req.user) {
+      if (!req.user.id) {
         return res.status(401).json({ message: 'Unauthorized: Missing user credentials' });
       }
       const user = await User.findById(req.user.id);
