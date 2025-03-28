@@ -28,7 +28,7 @@ server.use(accountRouter);
 const PORT = 4001;
 
 server.get('/',(req,res)=>{
-    res.status(200).json("Dev Sewnex server started - Accounts v1.0")
+    res.status(200).json("SBX Sewnex server started - Accounts v1.0")
 })
 
 server.listen(PORT,()=>{
